@@ -17,305 +17,119 @@ library(tidyverse)
 library(tidyquant)  
 ```
 
-# Hito 1:
+Análisis Opción SPY Gestión Financiera Hito 1: Derivados y Tópicos
 
-## Descripción Activo y Contexto
+Profesor: Sebastián Cea Integrante: Alfonso Ortiz
 
-Fecha de entrega límite: Miércoles 25 de Septiembre 23:59.
+23 de Septiembre de 2024
 
-### Definición
+Sector
 
-El activo elegido fue Enel Chile S.A. La compañía es una extensión de Enel, empresa italiana. Se dedica a generación, distribución y transformación de energía a lo largo de todo el país.
+El Nasdaq 100 es un índice bursátil que agrupa a las 100 empresas no financieras más grandes que cotizan en la bolsa Nasdaq, principalmente en sectores tecnológicos, como Apple, Microsoft y Amazon(Chen 2005). Creado en 1985, ha sido un referente de la innovación tecnológica y crecimiento económico global(¿Cuál es el Etf Qqq Y Cómo Funciona? - FasterCapital sin fecha).
 
-Enel Chile se formó a partir de una reestructuración que comenzó en el año 2015, en ese entonces la empresa se llamaba Enersis Américas. En esta reestructuración, se aprobó la fusión de las compañías Enersis Chile, Endesa Chile y Chilectra en una estrategia denominada "La Fusión". En este mismo proceso se procedió al cambio de nombre a la hoy conocida Enel Chile S.A.
+El ETF QQQ, lanzado en 1999, replica el comportamiento del Nasdaq 100, permitiendo a los inversionistas acceder a este grupo de empresas con una sola inversión. Es uno de los ETFs más populares por su enfoque en el sector tecnológico y su liquidez. Mediante el mismo, los inversores pueden obtener el rendimiento de las empresas y del mercado sin necesidad de adquirir individualmente cada acción que compone el índice.
 
-Enel Chile es la mayor suministradora de energía del país, debido a esto en relevante exponer los datos nacionales de uso de electricidad. En el paper "Consumption-based carbon emissions, renewable energy consumption, financial development and economic growth in Chile" de @kirikkaleli2021 se expone un análisis descriptivo de los consumos nacionales de electricidad, el cual se presenta a continuación:
+Los ETFs ofrecen varias ventajas, entre las más destacadas están las comisiones bajas, la flexibilidad en el trading y la transparencia. Según el Estudio Global de ETFs 2019, estas características son apreciadas por los inversores profesionales, quienes valoran la posibilidad de acceder a una amplia variedad de activos de manera eficiente y a bajo costo. Además, los ETFs permiten diversificación en las carteras de inversión y facilidad de gestión, lo que los hace atractivos tanto para estrategias pasivas como activas.
 
-[![Tabla 2 en](Data/Screenshot%202023-09-28%20at%2015.51.18.png){fig-align="center"}](https://doi.org/10.1002/bse.2945)
+Motivación
 
-En donde:
+El ETF QQQ, que replica al Nasdaq 100, me ofrece una oportunidad invaluable para analizar un índice compuesto por las empresas más influyentes del sector tecnológico. El Estudio Global de ETFs 2019 de JP Morgan destaca la creciente popularidad de los ETFs debido a sus bajos costos, liquidez y diversificación, lo que los convierte en herramientas claves para la gestión eficiente de carteras. Esto refuerza mi interés en estudiar los ETFs como vehículos de inversión innovadores y accesibles.
 
--   CCO2: Emisiones de carbonos basadas en el consumo de energía medida en millones de toneladas de CO2.
+Desde una perspectiva personal, profundizar en el análisis del QQQ me permite aplicar lo aprendido en clases a un entorno real, centrándome en las estrategias pasivas de inversión, que están siendo cada vez más adoptadas por inversores institucionales. Además, entender cómo los ETFs pueden adaptarse a las necesidades cambiantes del mercado me ayudará a prepararme para futuros roles en gestión de activos y asesoramiento financiero, contribuyendo a mi desarrollo profesional dentro del sector.
 
--   GDP: Crecimiento de la economía medido en el PIB per cápita.
+La importancia de este índice como termómetro del rendimiento de las empresas tecnológicas más influyentes. Estas compañías impulsan la innovación global y tienen un papel crucial en la economía. El estudio realizado por JP Morgan, mencionado anteriormente, resalta cómo los ETFs, como el QQQ, permiten a los inversores acceder fácilmente a este tipo de activos de alto rendimiento con bajos costos y mayor liquidez, lo que me inspira a profundizar en su funcionamiento y aplicación dentro de las estrategias de inversión.
 
--   ELE: Consumo eléctrico medido en Kw/h.
+Contexto
 
--   REN: COnsumo de energía renovables medido en Tw/h.
+En este análisis, evaluaremos tres variables económicas clave relacionadas con el ETF Invesco QQQ Trust (QQQ), que replica el índice Nasdaq 100. Primero, analizaremos la evolución histórica del precio ajustado de cierre para comprender las tendencias de crecimiento del ETF y su sensibilidad a las crisis. Segundo, se examinarán los retornos anuales del QQQ, lo que permitirá visualizar los períodos de alta rentabilidad y momentos de pérdida. Finalmente, exploraremos la volatilidad histórica, que refleja cómo las fluctuaciones del mercado afectan el comportamiento del ETF y las implicaciones para los inversores en opciones. Cabe mencionar que los datos obtenidos provienen directamente desde Yahoo Finance, pero los gráficos son de elaboración propia mediante Google Collab. El gráfico de precios ajustados de cierre muestra un crecimiento constante del ETF QQQ, especialmente desde 2010, lo que refleja la robustez del sector tecnológico, al que está fuertemente ligado el Nasdaq 100. Después de la caída significativa tras la burbuja de las punto-com en 2000, donde hubo un aumento rápido y no sostenible en las valoraciones de las acciones de empresas tecnológicas causando grandes pérdidas(Hayes 2010). Por lo que el precio del ETF tocó un mínimo a principios de la década de 2000, para luego empezar una recuperación sostenida. Este crecimiento acelerado indica el impacto positivo de la innovación tecnológica y la capitalización bursátil creciente de las empresas del Nasdaq 100. En particular, entre 2015 y 2020, el gráfico muestra un aumento pronunciado, alcanzando un máximo histórico durante la pandemia de COVID-19. A pesar de las correcciones observadas en los últimos años, el ETF ha mantenido una tendencia alcista, lo que demuestra la confianza del mercado en las empresas tecnológicas. Esto convierte al QQQ en un activo atractivo para inversores a largo plazo, aunque la alta exposición a este sector también lo hace vulnerable a correcciones importantes en tiempos de incertidumbre global.
 
--   FD: Crecimiento financiero, medida amplia para el desarrollo financiero teniendo en cuenta su eficiencia, accesibilidad y profundidad.
+Gráfico 1: Precio Ajustado de Cierre Histórico Fuente: Elaboración propia
 
-```{r ETL}
-#| echo: false
-# Alternativamente Use FANG data set
-# data("FANG") 
-end <- as_date("2022-12-31")
-# Get AAPL and AMZN Stock Prices
-# AAPL <- tq_get("AAPL", get = "stock.prices", from = "2015-09-01", to = end)
-# AMZN <- tq_get("AMZN", get = "stock.prices", from = "2000-01-01", to = end)
-ENELCHILE <- tq_get("ENELCHILE.SN", get = "stock.prices", from = "2017-01-01", to = end)
-ENELAM <- tq_get("ENELAM.SN", get = "stock.prices", from = "2017-01-01", to = end)
-AESANDES <- tq_get("AESANDES.SN", get = "stock.prices", from = "2017-01-01", to = end)
-ECL <- tq_get("ECL.SN", get = "stock.prices", from = "2017-01-01", to = end)
-CL <- rbind(ENELCHILE,ENELAM,AESANDES,ECL)
+El gráfico de los retornos anuales del ETF QQQ ilustra la volatilidad del rendimiento del índice Nasdaq 100 a lo largo de las últimas dos décadas. Durante la burbuja de las punto-com y la crisis financiera de 2008, se registraron pérdidas significativas superiores al 40%, lo que muestra la sensibilidad del ETF a las crisis financieras. Sin embargo, el gráfico también destaca periodos de fuertes ganancias, como en 2003 y 2009, cuando los retornos superaron el 50%, impulsados por la recuperación del mercado tecnológico. En años recientes, el ETF ha mantenido un rendimiento positivo, aunque se observa una caída en 2022, reflejando el impacto de factores macroeconómicos y la volatilidad del sector. Esto muestra que, aunque el ETF ofrece un gran potencial de ganancias, también es susceptible a riesgos importantes, especialmente en épocas de crisis. Los inversores deben considerar este comportamiento cíclico, ya que la exposición al sector tecnológico puede implicar tanto altas recompensas como grandes riesgos.
+
+Gráfico 2: Retorno Anual Histórico
+
+Fuente: Elaboración propia
+
+La gráfica de volatilidad histórica revela picos significativos en la volatilidad del ETF QQQ durante momentos de crisis, como la burbuja de las punto-com y la crisis financiera de 2008. La volatilidad en esos periodos alcanzó niveles superiores al 0.8%, lo que refleja una alta incertidumbre en los mercados. Durante la pandemia de COVID-19 en 2020, también se observó un aumento considerable en la volatilidad, lo que se alineó con el nerviosismo global frente a los impactos económicos del virus. Por otro lado, en épocas de crecimiento económico, la volatilidad disminuye y tiende a mantenerse entre 0.1 y 0.3. Esto indica que el mercado tecnológico es más estable durante estos periodos, lo que facilita la predicción de los movimientos del ETF y, por ende, hace que las opciones sean menos costosas y más predecibles. La reciente estabilización sugiere que, aunque el sector sigue expuesto a riesgos, el mercado ha aprendido a absorber mejor las incertidumbres, lo cual es clave para los inversores que buscan minimizar riesgos.
+
+Gráfico 3: Volatilidad Histórica Fuente: Elaboración Propia
+
+Derivado
+
+Para este trabajo, se va a trabajar con la opción “QQQ240923C00425000” de Call. Los datos relevantes de este para realizar el análisis de Back Scholes y el Modelo Binomial son:
+
+Strike o Precio del Ejercicio (K) : \$425 Precio de la opción (Q3): \$57.20 Precio del Bono (B) : \$100.59 Rendimiento del bono (r) : 3.49% Day’s Range o Sigma: \$1.5 Precio del activo Subyacente (S0): \$482.89
+
+Teniendo el valor de So y el Day’s Range, se puede encontrar el valor de u y de d, al igual que el precio del activo en estado up y down:
+
+u: 1.00311 d: 0.996894 Precio del activo Estado Up (u) :\$484.39 Precio del activo Estado Down (d) :\$481.39
+
+Es importante mencionar que el bono elegido para este estudio es uno de la Tesorería de Estados Unidos cuya duración es de 5 años, este dato se puede ver en la imagen 1. Mientras que en la imagen 2 y 3 se puede observar, a más detalle el gráfico y los datos del activo subyacente, QQQ, y de la opción elegida, respectivamente.
+
+```         
+                              Imagen 1: Bonos del Tesoro de Estados Unidos
+  Fuente: Bloomberg
+
+               Imagen 2: Activo Subyacente QQQ
 ```
 
-Por otro lado, también es de suma importancia tener en consideración los precios históricos del activo ENELCHILE, el cual actualmente tiene un valor promedio para el intervalo de años 2017-presente igual a `r round(mean(ENELCHILE$close),digits=0)`. A continuación se presentan dos gráficos que muestran estos datos históricos:
+Fuente: Yahoo Finance
 
-```{r ENELCHILEline}
-#| echo: false
-ENELCHILE %>%
-    ggplot(aes(x = date, y = close)) +
-    geom_line() +
-    labs(title = "ENELCHILE Line Chart", y = "Closing Price", x = "") + 
-    theme_tq() +
-  geom_hline(yintercept=mean(ENELCHILE$close), linetype="dashed", color = "red")
+```         
+     Imagen 3: Opción de call QQQ
 ```
 
-```{r ENELCHILEcandle}
-#| warning: false
-ENELCHILE %>%
-    ggplot(aes(x = date, y = close)) +
-    geom_candlestick(aes(open = open, high = high, low = low, close = close)) +
-    labs(title = "ENELCHILE Candlestick Chart", y = "Closing Price", x = "") +
-    theme_tq()
+Fuente: Yahoo Finance
+
+En la imagen 4, se muestran los resultados obtenidos del modelo binomial. De este modelo, se va a analizar la matriz W y lo que refleja sus resultados.
+
+En la primera columna observamos la evolución del valor del bono. Inicialmente, se parte de una inversión negativa de -100.59, lo que sugiere una deuda o inversión apalancada en el bono. A medida que se evalúan los escenarios alcista y bajista, el valor del bono sube a 104.1 en ambos casos. Esto indica que el bono genera rendimientos constantes, independientemente de las fluctuaciones en el precio de la acción, lo que lo convierte en un instrumento seguro dentro de la estrategia de cobertura.
+
+En esta columna se refleja la evolución del valor de la acción, que comienza en 482.89. En el escenario alcista, la acción aumenta ligeramente a 484.39, lo que indica un crecimiento moderado en el mercado. Sin embargo, en el escenario bajista, el valor de la acción desciende ligeramente a 481.39, lo que representa una caída leve. Esto muestra que la acción tiene una volatilidad baja en relación con los escenarios analizados, lo que puede implicar un activo de gran estabilidad dentro de este portafolio.
+
+El valor de la opción es inicialmente negativo (-57.2), lo que indica que al comienzo está "out of the money". Sin embargo, en ambos escenarios futuros, la opción gana valor: en el escenario alcista sube a 59.39 y en el bajista a 56.39. Esto sugiere que la opción está fuertemente correlacionada con el precio de la acción y que, incluso en el escenario bajista, sigue siendo rentable. El hecho de que el valor de la opción sea positivo en ambos casos puede indicar que se trata de una opción de compra profundamente "in the money", o bien que el precio de ejercicio es favorable para el inversor.
+
+```         
+       Imagen 4: Código Binomial
 ```
 
-### Motivación
+Fuente: Google Colab entregado en clases
 
-Se escogió este activo en particular debido al compromiso con el medio ambiente y a indicadores ASG (Ambiental, Social y Gobernanza), alguno de sus objetivos son:
+El resultado del cálculo usando la fórmula de Black-Scholes muestra que el valor de la opción de compra es de \$58.70, lo que indica que la opción tiene valor intrínseco, ya que el precio del activo subyacente (So = \$482.89) es mayor que el precio de ejercicio (K = 425). Esto confirma que la opción está "in the money", lo que hace más probable que el comprador ejerza el derecho de comprar el activo a ese precio, ya que sería beneficioso.
 
-Alcanzar un 80% de energía renovable en su matriz de generación para 2024, reducir las emisiones de gases de efecto invernadero en un 40% para 2025 y aumentar la eficiencia energética en un 20% para 2030.
+La volatilidad (sigma = 1.5) alta contribuye significativamente al precio de la opción, ya que indica que el activo tiene grandes fluctuaciones de precio, lo que incrementa el riesgo y, por ende, el valor de la prima. La baja tasa de interés libre de riesgo (r = 3.5%) juega un papel menor, pero aún influye al descontar el valor futuro del ejercicio. Estos factores se combinan para justificar el valor de la opción, de acuerdo con los principios del modelo de Black-Scholes.
 
-Como menciona el Diario Financiero (DF) Enel Chile sostiene una estrategia de sostenibilidad para llegar a ser una empresa carbono neutral al año 2040. Para lograr este objetivo, Enel destinará US\$1.700 millones a temas ASG, los que principalmente se gastarán en la construcción de nuevas plantas de energías renovables.
-
-Asimismo, varios documentos de la WOS (Web of Science) sustentan la iniciativa medioambiental de Enel Chile, principalmente con tarifas variables que logren cambiar los hábitos de uso de energía, homeostaticidad energética, entre otros.
-
-Todos estos puntos fomentan el interés especifico sobre este activo por sobre los demás activos energéticos incluidos en el IPSA.
-
-### Contexto
-
-El IPSA tiene 4 componentes de la industria de energía, Enel Chile S.A, Enel Latinoamerica S.A, Engie Energia Chile S.A y AES Gener SA. Los primeros 2 corresponden a la empresa italiana Enel. A continuación se presentan los precios históricos de cada una de estas acciones:
-
-```{r context}
-#| warning: false
-#| echo: false
-start <- end - weeks(6)
-
-CL %>%
-    filter(date >= start - days(2 * 15)) %>%
-    ggplot(aes(x = date, y = close, group = symbol)) +
-    geom_line() +
-    labs(title = "Activos Energía IPSA", 
-         subtitle = "Comparativo de activos del sector",
-         y = "Precio al cierrew", x = "") + 
-    coord_x_date(xlim = c(start, end)) +
-    facet_wrap(~ symbol, ncol = 2, scale = "free_y") +
-    theme_tq()
+```         
+                                      Imagen 5: Código Black Scholes
 ```
 
-Si bien los montos de los precios dependen de otros factores, tales como la cantidad de acciones que componen la compañía, si se observan tendencias entre estas. La más clara es que ambas empresas de Enel siguen un mismo patrón de precios, lo que hace sentido ya que pertenecen al mismo grupo. Lo que también se aprecia, es que cuando el precio de Enel aumenta, tanto de Engie Energia Chile S.A como el de AES Gener SA disminuye. Esto se puede deber a que la variación en la participación que tiene en la industria cada uno de estas influye inversamente en la otra (a mayor participación de Enel Chile, menor será la de el resto de los suministradores nacionales).
+Fuente: Elaboración Propia
 
-También es interesante ver las rentabilidades que ha tenido el activo elegido:
+Conclusiones
 
-![](Data/Screenshot%202023-09-28%20at%2017.57.54.png){fig-align="center" width="144"}
+En este análisis, se utilizó tanto el modelo binomial como el modelo de Black-Scholes para evaluar una opción call sobre el índice Nasdaq 100 (a través del ETF QQQ). El modelo binomial permitió simular diferentes escenarios de mercado, proporcionando una visión más detallada de cómo las fluctuaciones en el activo subyacente impactan el valor de la opción en tiempo discreto. Este enfoque destaca por su capacidad de modelar cambios graduales y probabilidades específicas, lo que brinda mayor flexibilidad al evaluar opciones en situaciones de incertidumbre.
 
-A partir de esto se puede ver que Enel Chile ha tenido un crecimiento en la mayoría de los años, aunque se puede apreciar una baja de casi un 50% en el año 2021 debido a la pandemia de Covid-19. Cabe destacar que según analistas de Yahoo Finance, Enel Chile tendrá un crecimiento estimado cercano al 65,80%.
+Por otro lado, el modelo de Black-Scholes, aunque basado en un enfoque continuo y con menos flexibilidad en la consideración de cambios discretos, demostró ser eficiente al valorar la opción con resultados cercanos al modelo binomial. Black-Scholes es particularmente útil por su simplicidad, especialmente cuando se trabaja con grandes volúmenes de datos. Ambos modelos indican que la opción está “in the money” y, dado que los resultados de ambos son similares, la decisión de optar por la opción depende del perfil de riesgo del inversionista.
 
-### Modelo Binomial
+Finalmente, si bien los dos modelos arrojan resultados alineados, la opción de compra analizada parece ser una inversión adecuada, ya que el valor intrínseco indica beneficios al ejercerla. Sin embargo, es crucial considerar la volatilidad del activo subyacente y las condiciones del mercado antes de tomar una decisión, especialmente en escenarios de alto riesgo como los que afectan a las empresas tecnológicas dentro del Nasdaq 100.
 
-El Modelo Binomial de Valoración de Opciones (BM, por sus siglas en inglés) también conocido como Cox-Ross-Rubinstein introducido en @cox1979, es un modelo que estima el valor de una opción en t=0 teniendo pagos futuros en diferentes estados (usualmente "Up" y "Down"). Este Modelo Binomial asume que no hay posibilidad de arbitraje en el mercado, determinando el precio que sigue un activo en un random walk, en donde en cada paso (tiempo) existe una probabilidad de que el precio suba o baje (Ahmad, 2018).
+###Uso de IA
 
-![Random Walk en BM de un paso (Ahmad, 2018)](Data/Screenshot%202023-10-19%20at%2010.33.38.png){fig-align="center"}
+Imagen 5: Chequeo de Presencia de IA Fuente: undetectable.ai/es
 
-Para calcular la valoración de la opción con el Modelo Binomial, es necesario definir $S_0$, que corresponde al precio actual del activo. Además, se deben determinar los valores de $u$ y $d$, que representan los factores por los cuales se multiplica $S_0$ en cada estado para obtener el precio del activo en cada caso en el siguiente período (t = 1):
+Bibliografía
 
-$$
-S_1 = \begin{cases}    S_0\cdot u \text{ en el estado ``Up"} \\    
-S_0\cdot d \text{ en el estado ``Down"}\end{cases}
-$$
+Chen, J., (2005). Nasdaq 100 Index: What It Is, How It's Weighted and Traded \[en línea\]. Investopedia. \[Consultado el 23 de septiembre de 2024\]. Disponible en: https://www.investopedia.com/terms/n/nasdaq100.asp
 
-También se debe calcular la probabilidad $P$ de que ocurra el caso "Up", la probabilidad de que ocurra el otro caso ("Down") simplemete quedaría en $(1-P)$. Para el calculo de la porobabilidad se usa la siguiente ecuación:
+¿Cuál es el Etf Qqq Y Cómo Funciona? - FasterCapital \[en línea\], (sin fecha). FasterCapital. \[Consultado el 23 de septiembre de 2024\]. Disponible en: https://fastercapital.com/es/tema/¿cuál-es-el-etf-qqq-y-cómo-funciona.html#:\~:text=Historia%20del%20ETF%20QQQ:%20el,mercado%20de%20valores%20de%20NASDAQ
 
-$$
-P = \frac{e^r-d}{u-d}
-$$
+J.P. Morgan, (2019). Estudio Global de ETFS 2019. \[Consultado el 23 de septiembre de 2024\]. Disponible en: https://am.jpmorgan.com/content/dam/jpm-am-aem/emea/es/es/insights/portfolio-insights/etf/global-etf-study-es.pdf
 
-Donde $r$ es la tasa libre de riesgo.
+Bloomberg - Are you a robot? \[en línea\], (sin fecha). Bloomberg - Are you a robot? \[Consultado el 23 de septiembre de 2024\]. Disponible en: https://www.bloomberg.com/markets/rates-bonds/government-bonds/us
 
-Por otro lado se deben calcular $C_u$ y $C_d$ los cuales se obtienen como los precios de una opción europea:
+Hayes, A., (2010). Dotcom Bubble Definition \[en línea\]. Investopedia. \[Consultado el 24 de septiembre de 2024\]. Disponible en: https://www.investopedia.com/terms/d/dotcom-bubble.asp
 
-$$
-C_u = max(0, S_0\cdot u-k)\\
-C_d = max(0, S_0\cdot d-k)
-$$
+Invesco QQQ Trust (QQQ) Stock Price, News, Quote & History - Yahoo Finance \[en línea\], (sin fecha). Yahoo Finance - Stock Market Live, Quotes, Business & Finance News. \[Consultado el 22 de septiembre de 2024\]. Disponible en: https://finance.yahoo.com/quote/QQQ/
 
-Finalmente el precio de la opción se calcula de la siguiente manera:
-
-$$
-V = \frac{C_u\cdot P + C_d\cdot (1-P)}{1+r}
-$$
-
-```{r}
-binomial_model <- function(cu, p, cd, rf) {
-  return((cu*p + cd*(1-p))/(1+rf))
-} 
-
-S <- tail(ENELCHILE$close,1)  # Precio actual del activo subyacente
-K <- 38  # Precio de ejercicio de la opción
-T <- 1  # Tiempo hasta la expiración (en años)
-r <- 0.0642 # Tasa de interés libre de riesgo
-u <- 1.1  # Factor de crecimiento en un paso hacia arriba
-d <- 0.9  # Factor de crecimiento en un paso hacia abajo
-
-Su <- S*u
-Sd <- S*d
-p <- (1+r-d)/((1+r)*(u-d))
-
-cu <- max(Su - K, 0)
-cd <- max(Sd - K, 0)
-
-
-print(paste("El precio de la opción con el Modelo Binomial es ", binomial_model(cu, p, cd, r)))
-
-```
-
-### Modelo Black and Scholes (BS)
-
-```{r}
-black_scholes <- function(S, K, t, r, sigma) {
-    d1 <- (log(S/K) + (r + 0.5 * sigma^2) * t) / (sigma * sqrt(t))
-    d2 <- d1 - sigma * sqrt(t)
-    N_d1 <- pnorm(d1)
-    N_d2 <- pnorm(d2)
-    precio_call <- S * N_d1 - K * exp(-r * t) * N_d2
-    return(precio_call)
-  }
-  
-rendimientos <- diff(log(ENELCHILE$close))
-sigma<-sd(rendimientos[2:length(rendimientos)])
-volatilidad<-var(rendimientos[2:length(rendimientos)])
-
-
-S<- tail(ENELCHILE$close,1) # Precio actual del activo subyacente
-K<- 38 # Precio de ejercicio de la opción
-R<- 0.0642 # Tasa de interés libre de riesgo
-t <- 1 # Tiempo hasta la expiración (en años)
-
-print(paste("El precio de la opción con el Modelo Black and Scholes es ", black_scholes(S, K, t, R, sigma)))
-
-
-```
-
-### Comparación de modelos
-
-Ambos modelos son comúnmente utilizados en las finanzas. Por lo tanto, se puede afirmar que cuentan con respaldo y fundamentos sólidos. Según el artículo de (Ahmad, 2018), los resultados del precio de la opción calculados con ambos modelos muestran una correlación muy cercana a 1, lo que significa que si el precio de la opción aumenta con un modelo, también lo hace con el otro. Sin embargo, esto no implica que ambos modelos proporcionen el mismo precio, como se puede observar en el ejercicio realizado anteriormente.
-
-Estos modelos difieren en algunas cosas, tales como:
-
--   Precio del activo subyacente: En modelo Black and Scholes sigue una distribución lognormal mientras que el Binomial multiplica el valos $S_0$ con dos opciones ($u$ y $d$)
-
--   Debido a lo anterior, el modelo de Black and Scholes es continuo y el Binomial discreto.
-
--   El modelo BS sirve solo para opciones europeas, mientras que el Binomial también sirve para opciones americanas.
-
-También tienen algunas similitudes:
-
--   Ambos utilizan el precio actual del activo subyacente.
-
--   Ambos usan la tasa libre de riesgo.
-
--   En este caso los dos se usaron para un periodo de tiempo.
-
--   Ambos consideran la volatilidad del activo.
-
-En resumen, el modelo de Black-Scholes constituye una buena herramienta analítica para valorar opciones europeas y supone movimientos continuos en las cotizaciones del mercado. En cambio, el modelo Binomial ofrece mayor flexibilidad al emplear una estructura de árbol que facilita la valoración tanto de opciones europeas como americanas. Elegir uno u otro modelo dependerá del tipo específico de opción que se esté analizando y las inferencias que se quieran hacer en relación a cómo evolucionarán los precios en el mercado financiero.
-
-# Hito 2 (en revisión):
-
-### Análisis de Largo Plazo
-
-#### Caracterización deuda
-
-Enel Chile mantiene deudas de prestamos bancarios por monedas y vencimiento, el que se detalla a continuación:
-
-![](Data/Screenshot%202023-09-28%20at%2019.15.48.png){fig-align="center" width="792"}
-
-Del mismo estado financiero, se detallan los siguientes instrumentos financieros:
-
-1.  Activos financieros no derivados: Costo amortizado, Activos financieros registrados a valor razonable con cambios en otros resultados integrales y Activos financieros registrados a valor razonable con cambios en resultados.
-2.  Efectivo y equivalentes al efectivo
-3.  Deterioro de valor de los activos financieros
-4.  Pasivos financieros excepto derivados
-5.  Derivados y operaciones de cobertura
-6.  Baja de activos y pasivos financieros
-7.  Compensación de activos y pasivos financieros
-8.  Contratos de garantías financieras
-
-La inversiones de al compañía son colocadas segun el siguiente criterio mencionado en su estado financiero:
-
-"Las inversiones de excedentes de caja se efectúan en entidades financieras nacionales y extranjeras de primera línea con límites establecidos para cada entidad.
-
-En la selección de bancos para inversiones se consideran aquellos que tengan calificación investment grade, considerando las tres principales agencias de rating internacional (Moody's, S&P y Fitch).
-
-Las colocaciones pueden ser respaldadas con bonos del tesoro de Chile y/o papeles emitidos por bancos de primera línea, privilegiando estos últimos por ofrecer mayores retornos (siempre enmarcado en las políticas de colocaciones vigentes)."
-
-A continuación se presenta la clasificación de instrumentos financieros por naturaleza y categoria:
-
-![](Data/Screenshot%202023-09-28%20at%2019.29.34.png){width="700"}
-
-#### Caracterización de emisiones históricas (Aplicación cap. 20)
-
-Segun el último estado financiero emitido por la empresa Enel Chile en junio 2023, la compañía tiene 69.166.557 miles de acciones ordinaria en circulación. En la base de la CMF no existen registros de emisiones de acciones, sin embargo si hay una inscropción en el registri de valores por una emisión de 10.000.000.000 acciones de pago ordinarias para así aumentar el capital de la empresa en \$820.000.000.000, teniendo cada acción un precio de \$82.
-
-No existe registro del procedimiento utilizado para la emisión de estas acciones, solo se detalla que la junta extraordinaria de accionistas se llevó a cabo el 20 de diciembre de 2017 y que cuya acta se redujo a escritura publica el 28 de diciembre del mismo año.
-
-#### Relación con activos derivados
-
-Para protección de la empresa, esta busca cobertura frente a posibles riesgos que puedan alterar los objetivos de la compañía. Ellos mismos señalan "Los derivados mantenidos por el Grupo corresponden fundamentalmente a operaciones contratadas con el fin de cubrir el riesgo..."
-
-Enel Chile toma en consideración y protección frente los siguientes riesgos:
-
-1.  Riesgo de tasa de interés
-2.  Riesgo de tipo de cambio
-3.  Riesgo de commodities
-4.  Riesgo de liquidez
-5.  Riesgo de crédito
-
-A continuación se desglozan los derivados de Enel Chile:
-
-![](Data/Screenshot%202023-09-28%20at%2019.49.03.png){fig-align="center"}
-
-Los derivados se registran por su valor razonable en la fecha del estado de situación financiera. En el caso de los derivados financieros, si su valor es positivo, se registran en el rubro "Otros activos financieros", y si es negativo, en el rubro "Otros pasivos financieros". Si se trata de derivados sobre commodities, el valor positivo se registra en el rubro "Cuentas comerciales por cobrar y otras cuentas por cobrar" y si es negativo en el rubro "Cuentas comerciales y otras cuentas por pagar" (EEFF Enel Chile, Junio 2023).
-
-### Reporte grupal
-
-Se decidieron los siguientes pesos del portafolio basándose en distintos factores, pero principalente la estimación de crecimiento a un año de cada uno de los activos proporcionada por Yahoo Finance. Los porcentajes del portafolio serán los siguientes:
-
--   Enel: 50%
-
--   Banco de Chile: 30%
-
--   Parque Arauco: 20%
-
-En primer lugar, se determinó que Enel Chile tendra un 50% de peso en el portafolio debido al pronostico de crecimiento que tendrá en el proximo año (65.80%). Además en los ultimos 2 años ha obtenido un retorno promedio de 37.5%, mayor que los activos elegidos en las otras industrias. Otro aspecto que nos hizo elegir un peso mayor que las otras compañia es su compromiso con el medio ambiente, aspecto que cada vez es mas valordo. Por otro lado, la empresa ha invertido fuertemente en nuevos proyectos que probablemente demuestren mayores retornos en el futuro.
-
-Por otro lado, al Banco de Chile se le asignó un 30% de peso en el portafolio debido a su liderzago en la industria bancaria en terminos de rentabilidad y ha jugado un papel sumamente importante a lo largo de los años en la industria financiera. Junto a esto, la proyección del banco en terminos de crecimiento para los proximos años, es positiva y cercana a un 11.8%.
-
-Finalmente, a Parque Arauco se le otorgó un 20% del portafolio debido a la diversificación del modelo de negocios que han implementado en los últimos años. El ingreso al negocio de los edificios multifamily podría ser una razón de gran crecimiento para la empresa en el futuro, debido a que actualmente ya operan dos edificios en Santiago, tienen proyectos que estarán operando en el corto plazo en Perú y Colombia, y tienen planes de seguir ampliando esta cantidad. Considerando la gran demanda de arriendo que existe hoy en día, la empresa podría verse muy beneficiada con la implementación de este nuevo negocio.
-
-### Caso Grupal (No requerido para versión 2024)
-
-Los datos se obtuvieron en su mayoría del Estado Financiero de la empresa Enel Chile a junio de 2023. Los datos que no pudieron ser encontrados se supusieron a partir de la misma información entregada en ese documento.
-
-El caso escogido para replicar con nuestro activo fue el del capítulo 28 del libro guía del curso "Finanzas Corporativas" de Ross, en el cual se evalúan tres opciones. A continuación, se presentan los datos:
-
-![Datos de Estado Financiero ENELCHILE](Data/Screenshot%202023-10-26%20at%2022.43.45.png)
-
-![Datos ENELCHILE para Caso Cap.28](Data/Screenshot%202023-10-26%20at%2019.47.47.png)
-
-A partir de lo anterior, se puede determianar que el la opción 1 es la mejor debido a que obtiene el VPN mayor. Las opciones 2 y 3 dan un valor menor a la 1, lo que no se consideran optimas en este escenario.
-
-## Bibliografía
-
-Ahmad Dar, A., Anuradha, N., 1 Department of Mathematics and Actuarial Science, B S Abdur Rahman Crescent University, IN, & 2 Department of Management Studies, B S Abdur Rahman Crescent University, IN. (2018). Comparison: Binomial model and Black Scholes model. *Quantitative Finance and Economics*, *2*(1), 230--245. <https://doi.org/10.3934/QFE.2018.1.230>
+QQQ Sep 2024 425.000 call (QQQ240923C00425000) Stock Price, News, Quote & History - Yahoo Finance \[en línea\], (sin fecha). Yahoo Finance - Stock Market Live, Quotes, Business & Finance News. \[Consultado el 22 de septiembre de 2024\]. Disponible en: https://finance.yahoo.com/quote/QQQ240923C00425000/
