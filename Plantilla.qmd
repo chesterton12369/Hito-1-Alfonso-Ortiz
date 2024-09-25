@@ -17,11 +17,21 @@ library(tidyverse)
 library(tidyquant)  
 ```
 
-Análisis Opción SPY Gestión Financiera Hito 1: Derivados y Tópicos
+![](photos/uandes.png)
 
-Profesor: Sebastián Cea Integrante: Alfonso Ortiz
+```         
+                          Análisis Opción QQQ
 
-23 de Septiembre de 2024
+                          Gestión Financiera
+
+                      Hito 1: Derivados y Tópicos
+
+                                                              Profesor: Sebastián Cea
+ 
+                                                            Integrante: Alfonso Ortiz
+
+                                                             23 de Septiembre de 2024
+```
 
 Sector
 
@@ -43,17 +53,33 @@ Contexto
 
 En este análisis, evaluaremos tres variables económicas clave relacionadas con el ETF Invesco QQQ Trust (QQQ), que replica el índice Nasdaq 100. Primero, analizaremos la evolución histórica del precio ajustado de cierre para comprender las tendencias de crecimiento del ETF y su sensibilidad a las crisis. Segundo, se examinarán los retornos anuales del QQQ, lo que permitirá visualizar los períodos de alta rentabilidad y momentos de pérdida. Finalmente, exploraremos la volatilidad histórica, que refleja cómo las fluctuaciones del mercado afectan el comportamiento del ETF y las implicaciones para los inversores en opciones. Cabe mencionar que los datos obtenidos provienen directamente desde Yahoo Finance, pero los gráficos son de elaboración propia mediante Google Collab. El gráfico de precios ajustados de cierre muestra un crecimiento constante del ETF QQQ, especialmente desde 2010, lo que refleja la robustez del sector tecnológico, al que está fuertemente ligado el Nasdaq 100. Después de la caída significativa tras la burbuja de las punto-com en 2000, donde hubo un aumento rápido y no sostenible en las valoraciones de las acciones de empresas tecnológicas causando grandes pérdidas(Hayes 2010). Por lo que el precio del ETF tocó un mínimo a principios de la década de 2000, para luego empezar una recuperación sostenida. Este crecimiento acelerado indica el impacto positivo de la innovación tecnológica y la capitalización bursátil creciente de las empresas del Nasdaq 100. En particular, entre 2015 y 2020, el gráfico muestra un aumento pronunciado, alcanzando un máximo histórico durante la pandemia de COVID-19. A pesar de las correcciones observadas en los últimos años, el ETF ha mantenido una tendencia alcista, lo que demuestra la confianza del mercado en las empresas tecnológicas. Esto convierte al QQQ en un activo atractivo para inversores a largo plazo, aunque la alta exposición a este sector también lo hace vulnerable a correcciones importantes en tiempos de incertidumbre global.
 
-Gráfico 1: Precio Ajustado de Cierre Histórico Fuente: Elaboración propia
+![](photos/precios.png)
+
+```         
+                   Gráfico 1: Precio Ajustado de Cierre Histórico
+
+                           Fuente: Elaboración propia
+```
 
 El gráfico de los retornos anuales del ETF QQQ ilustra la volatilidad del rendimiento del índice Nasdaq 100 a lo largo de las últimas dos décadas. Durante la burbuja de las punto-com y la crisis financiera de 2008, se registraron pérdidas significativas superiores al 40%, lo que muestra la sensibilidad del ETF a las crisis financieras. Sin embargo, el gráfico también destaca periodos de fuertes ganancias, como en 2003 y 2009, cuando los retornos superaron el 50%, impulsados por la recuperación del mercado tecnológico. En años recientes, el ETF ha mantenido un rendimiento positivo, aunque se observa una caída en 2022, reflejando el impacto de factores macroeconómicos y la volatilidad del sector. Esto muestra que, aunque el ETF ofrece un gran potencial de ganancias, también es susceptible a riesgos importantes, especialmente en épocas de crisis. Los inversores deben considerar este comportamiento cíclico, ya que la exposición al sector tecnológico puede implicar tanto altas recompensas como grandes riesgos.
 
-Gráfico 2: Retorno Anual Histórico
+![](photos/retorno%20anual.png)
 
-Fuente: Elaboración propia
+```         
+                          Gráfico 2: Retorno Anual Histórico
+        
+                              Fuente: Elaboración propia
+```
 
 La gráfica de volatilidad histórica revela picos significativos en la volatilidad del ETF QQQ durante momentos de crisis, como la burbuja de las punto-com y la crisis financiera de 2008. La volatilidad en esos periodos alcanzó niveles superiores al 0.8%, lo que refleja una alta incertidumbre en los mercados. Durante la pandemia de COVID-19 en 2020, también se observó un aumento considerable en la volatilidad, lo que se alineó con el nerviosismo global frente a los impactos económicos del virus. Por otro lado, en épocas de crecimiento económico, la volatilidad disminuye y tiende a mantenerse entre 0.1 y 0.3. Esto indica que el mercado tecnológico es más estable durante estos periodos, lo que facilita la predicción de los movimientos del ETF y, por ende, hace que las opciones sean menos costosas y más predecibles. La reciente estabilización sugiere que, aunque el sector sigue expuesto a riesgos, el mercado ha aprendido a absorber mejor las incertidumbres, lo cual es clave para los inversores que buscan minimizar riesgos.
 
-Gráfico 3: Volatilidad Histórica Fuente: Elaboración Propia
+![](photos/volatilidad.png)
+
+```         
+                              Gráfico 3: Volatilidad Histórica
+        
+                                Fuente: Elaboración Propia
+```
 
 Derivado
 
@@ -67,20 +93,29 @@ u: 1.00311 d: 0.996894 Precio del activo Estado Up (u) :\$484.39 Precio del acti
 
 Es importante mencionar que el bono elegido para este estudio es uno de la Tesorería de Estados Unidos cuya duración es de 5 años, este dato se puede ver en la imagen 1. Mientras que en la imagen 2 y 3 se puede observar, a más detalle el gráfico y los datos del activo subyacente, QQQ, y de la opción elegida, respectivamente.
 
-```         
-                              Imagen 1: Bonos del Tesoro de Estados Unidos
-  Fuente: Bloomberg
-
-               Imagen 2: Activo Subyacente QQQ
-```
-
-Fuente: Yahoo Finance
+![](photos/bonos.png)
 
 ```         
-     Imagen 3: Opción de call QQQ
+                     Imagen 1: Bonos del Tesoro de Estados Unidos
+                               Fuente: Bloomberg
+
+              
 ```
 
-Fuente: Yahoo Finance
+![](photos/qqq.png)
+
+```         
+                    Imagen 2: Activo Subyacente QQQ
+                         Fuente: Yahoo Finance
+                         
+```
+
+![](photos/opcion%20qqq.png)
+
+```         
+                Imagen 3: Opción de Call QQQ
+                     Fuente: Yahoo Finance
+```
 
 En la imagen 4, se muestran los resultados obtenidos del modelo binomial. De este modelo, se va a analizar la matriz W y lo que refleja sus resultados.
 
@@ -91,20 +126,38 @@ En esta columna se refleja la evolución del valor de la acción, que comienza e
 El valor de la opción es inicialmente negativo (-57.2), lo que indica que al comienzo está "out of the money". Sin embargo, en ambos escenarios futuros, la opción gana valor: en el escenario alcista sube a 59.39 y en el bajista a 56.39. Esto sugiere que la opción está fuertemente correlacionada con el precio de la acción y que, incluso en el escenario bajista, sigue siendo rentable. El hecho de que el valor de la opción sea positivo en ambos casos puede indicar que se trata de una opción de compra profundamente "in the money", o bien que el precio de ejercicio es favorable para el inversor.
 
 ```         
-       Imagen 4: Código Binomial
 ```
 
-Fuente: Google Colab entregado en clases
+![](photos/binomial.png)
+
+```         
+                  Imagen 4: Código Binomial
+          Fuente: Google Colab entregado en clases
+```
+
+```         
+```
 
 El resultado del cálculo usando la fórmula de Black-Scholes muestra que el valor de la opción de compra es de \$58.70, lo que indica que la opción tiene valor intrínseco, ya que el precio del activo subyacente (So = \$482.89) es mayor que el precio de ejercicio (K = 425). Esto confirma que la opción está "in the money", lo que hace más probable que el comprador ejerza el derecho de comprar el activo a ese precio, ya que sería beneficioso.
 
 La volatilidad (sigma = 1.5) alta contribuye significativamente al precio de la opción, ya que indica que el activo tiene grandes fluctuaciones de precio, lo que incrementa el riesgo y, por ende, el valor de la prima. La baja tasa de interés libre de riesgo (r = 3.5%) juega un papel menor, pero aún influye al descontar el valor futuro del ejercicio. Estos factores se combinan para justificar el valor de la opción, de acuerdo con los principios del modelo de Black-Scholes.
 
 ```         
-                                      Imagen 5: Código Black Scholes
 ```
 
-Fuente: Elaboración Propia
+![](photos/back%20scholes.png)
+
+```         
+                  Imagen 5: Código Black Scholes
+                    Fuente: Elaboración Propia
+```
+
+```         
+```
+
+```         
+
+
 
 Conclusiones
 
@@ -115,8 +168,23 @@ Por otro lado, el modelo de Black-Scholes, aunque basado en un enfoque continuo 
 Finalmente, si bien los dos modelos arrojan resultados alineados, la opción de compra analizada parece ser una inversión adecuada, ya que el valor intrínseco indica beneficios al ejercerla. Sin embargo, es crucial considerar la volatilidad del activo subyacente y las condiciones del mercado antes de tomar una decisión, especialmente en escenarios de alto riesgo como los que afectan a las empresas tecnológicas dentro del Nasdaq 100.
 
 ###Uso de IA
+```
 
-Imagen 5: Chequeo de Presencia de IA Fuente: undetectable.ai/es
+```         
+```
+
+![](photos/ia.png)
+
+```         
+       Imagen 6: Chequeo de Presencia de IA 
+           Fuente: undetectable.ai/es
+```
+
+\`\`\`
+
+\`\`\`
+
+\`\`\`
 
 Bibliografía
 
